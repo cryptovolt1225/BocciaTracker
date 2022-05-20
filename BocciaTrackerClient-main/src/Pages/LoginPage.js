@@ -12,6 +12,15 @@ const LoginPage = (props) => {
   const navigate = useNavigate();
 
   const login = async () => {
+    if( formInput.email == "" )
+    {
+      alert("Please input email address!");
+      return;
+    }else if( formInput.password == "" )
+    {
+      alert("Please input password!");
+      return;
+    }
     try {
       const loginResult = await axios.post(
         `http://localhost:5000/api/users/login`,

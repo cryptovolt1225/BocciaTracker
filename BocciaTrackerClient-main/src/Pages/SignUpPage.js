@@ -11,14 +11,17 @@ const SignUpPage = () => {
   const navigate = useNavigate();
 
   const signup = async () => {
-    if(formInput.username == "")
+    if( formInput.username == "" )
     {
       alert("Please input username!");
       return;
-    }else if(formInput.email == "")
+    }else if( formInput.email == "" )
     {
       alert("Please input email address!");
       return;
+    }else if( formInput.password == "" )
+    {
+      alert("Please input password!");
     }
     try {
       const signupResult = await axios.post(`http://localhost:5000/api/users/register`, formInput);
