@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "full_name": "Emma Ray",
+        "email": "astarsmeare0@deliciousdays.com",
+        "phone": "135-158-3593",
+        "players": [1,4]
+    },
+    {
+        "id": 2,
+        "full_name": "Willow Harmon",
+        "email": "cglyne1@wikia.com",
+        "phone": "287-725-2127",
+        "players": [492]
+    },
+    {
+        "id": 3,
+        "full_name": "Anthony Spark",
+        "email": "ndoberer2@boston.com",
+        "phone": "159-794-0732",
+        "players": [477,336,285,480]
+    },
+    {
+        "id": 4,
+        "full_name": "David Cohen",
+        "email": "ltreven3@state.gov",
+        "phone": "343-522-3432",
+        "players": [224]
+    },
+    {
+        "id": 5,
+        "full_name": "Brian Levi",
+        "email": "pmedcalf4@amazon.de",
+        "phone": "860-212-4994",
+        "players": [31,406,210,3]
+    },
+    {
+        "id": 6,
+        "full_name": "Kylie Jordan",
+        "email": "sfoucher5@desdev.cn",
+        "phone": "331-588-5304",
+        "players": [25,330,86]
+    },
+    {
+        "id": 7,
+        "full_name": "Dylan Jones",
+        "email": "dkitchingman6@virginia.edu",
+        "phone": "356-525-0647",
+        "players": [143,345,137,466,230]
+    },
+    {
+        "id": 8,
+        "full_name": "Alyssa Parker",
+        "email": "chargitt7@goo.gl",
+        "phone": "795-983-4947",
+        "players": [148,233,368]
+    },
+    {
+        "id": 9,
+        "full_name": "Leni Bush",
+        "email": "jchallinor8@unicef.org",
+        "phone": "111-780-0342",
+        "players": [168,141,444,179,384]
+    },
+    {
+        "id": 10,
+        "full_name": "Yan Noah",
+        "email": "ceaves9@artisteer.com",
+        "phone": "353-230-7507",
+        "players": [109,49]
+    }
+]

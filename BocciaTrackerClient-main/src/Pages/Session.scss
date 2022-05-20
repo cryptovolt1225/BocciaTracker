@@ -1,0 +1,59 @@
+.session {
+    &-page {
+    }
+    &-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #dbe1e7;
+      padding-bottom: 32px;
+      h4 {
+        font-size: 1.5rem;
+        padding-bottom: 8px;
+      }
+      &-desc {
+        color: #75787e;
+        font-size: 0.875rem;
+      }
+    }
+    &-data {
+      padding: 40px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+    &-tickets {
+      display: flex;
+      justify-content: space-between;
+      flex-shrink: 0;
+      width: 48%;
+      flex-wrap: wrap;
+      row-gap: 4%;
+      .overview-ticket{
+        margin-bottom: 0;
+      }
+    }
+   
+    &-growth {
+      width: 48%;
+    }
+    &-place-holder-boxes{
+      width: 66.7%;
+      display: flex;
+      justify-content: space-between;
+    }
+    &-place-holders{
+      display: flex;
+      justify-content: space-between;
+    }
+    &-place-holder-growth{
+      min-height: 100%;
+      width: 31%;
+  
+    }
+  }
+
+  .page-container{
+      max-width: 50%
+  }
+  
