@@ -14,7 +14,7 @@ const LoginPage = (props) => {
   const login = async () => {
     try {
       const loginResult = await axios.post(
-        `http://localhost:5000/api/coaches/login`,
+        `http://localhost:5000/api/users/login`,
         formInput
       );
       console.log("loginResult.data.user", loginResult.data.user);

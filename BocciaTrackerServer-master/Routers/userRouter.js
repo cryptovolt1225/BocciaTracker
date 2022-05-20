@@ -1,15 +1,10 @@
-// set router
-const { Router } = require('express');
+const { Router } = require("express");
+
+const { authController } = require("../Controllers/authController");
 
 const UserRouter = new Router();
-
-const {
-  register,
-  login,
-} = require('../Middleware/authentication');
-
-// endpoints
-UserRouter.post('/register', register);
-UserRouter.post('/login', login);
-
 module.exports = { UserRouter };
+
+UserRouter.post("/register", authController.createUser);
+UserRouter.post("/login", authController.loginUser);
+// AuthRouter.post("/signup", authController.createUser);

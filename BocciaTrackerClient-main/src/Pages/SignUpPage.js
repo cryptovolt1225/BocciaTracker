@@ -4,13 +4,22 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 const SignUpPage = () => {
   const [formInput, setSignupFormInput] = useState({
-    full_name: "",
+    username: "",
     email: "",
     password: "",
   });
   const navigate = useNavigate();
 
   const signup = async () => {
+    if(formInput.username == "")
+    {
+      alert("Please input username!");
+      return;
+    }else if(formInput.email == "")
+    {
+      alert("Please input email address!");
+      return;
+    }
     try {
       const signupResult = await axios.post(`http://localhost:5000/api/users/register`, formInput);
       console.log(signupResult, "result")
@@ -33,7 +42,7 @@ const SignUpPage = () => {
           <form>
             <div className="mb-3">
               <input type="text" className="form-control" placeholder="Name" aria-label="Name" onChange={(e) =>
-                setSignupFormInput({ ...formInput, full_name: e.target.value })
+                setSignupFormInput({ ...formInput, username: e.target.value })
               } />
             </div>
             <div className="mb-3">
@@ -47,7 +56,7 @@ const SignUpPage = () => {
               } />
             </div>
             <div className="text-center">
-              <button className="btn bg-gradient-dark w-100 my-4 mb-2" onClick={() => signup()}>Sign up</button>
+              <button type="button" className="btn bg-gradient-dark w-100 my-4 mb-2" onClick={() => signup()}>Sign up</button>
             </div>
             <p className="text-sm mt-3 mb-0">Already have an account? <NavLink to="/login" className="text-dark font-weight-bolder">Log in</NavLink></p>
           </form>

@@ -4,6 +4,7 @@ require("./db_conection");
 
 const multer = require("multer");
 const { exec } = require("child_process");
+const cors = require('cors');
 
 const { CoachRouter } = require("./Routers/CoachRouter");
 const { PlayerRouter } = require("./Routers/PlayerRouter");
@@ -26,6 +27,8 @@ app.use((req, res, next) => {
   res.set("Content-Type", "application/json", "video/webm", "video/mpeg");
   next();
 });
+
+app.use(cors());
 
 app.use("/api/coaches", CoachRouter);
 app.use("/api/players", PlayerRouter);
