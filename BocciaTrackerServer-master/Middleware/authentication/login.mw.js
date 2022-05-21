@@ -3,14 +3,15 @@ const userController = require("../../Controllers/UserController");
 const makeResponse = require("./utils/makeResponse");
 const validateUserPassword = require("./utils/validateUserPassword");
 
+const bcrypt = require("bcryptjs");
+
 module.exports = async (req, res) => {
   const { email, password } = req.body;
   const userDoc = await coachController.findByEmail(email);
 
   console.log("usrDoc", userDoc);
   console.log("usrDoc password", userDoc.password);
-  console.log("usrDoc request", req.body.password);
-
+  
   // handle error
   if (userDoc === null) {
     res.status(400).send("error trying to find user");
@@ -18,7 +19,8 @@ module.exports = async (req, res) => {
     res.status(404).send("no user found");
   } // ----------------------------------------
   else {
-    if (userDoc.password === req.body.password) {
+    if(bcrypt.compare(req.body.password, userDoc.password)){
+    // if (userDoc.password === hash) {
       const bodyRes = makeResponse(userDoc);
       res.status(200).send(bodyRes);
       // res.status(200).send('Success')

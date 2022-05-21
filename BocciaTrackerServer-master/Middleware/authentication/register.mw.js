@@ -3,8 +3,20 @@ const makeResponse = require('./utils/makeResponse');
 const userController = require('../../Controllers/UserController');
 const { coachController } = require('../../Controllers/CoachController');
 
+const bcrypt = require("bcryptjs");
+
 module.exports = async (req, res) => {
-  let newUserDoc = await coachController.create(req.body);
+
+  const salt = bcrypt.genSaltSync(10);
+  const hash = bcrypt.hashSync(req.body.password,salt)
+
+  const newUser = ({
+    full_name: req.body.full_name,
+    email: req.body.email,
+    password: hash,
+  })
+
+  let newUserDoc = await coachController.create(newUser);
 
   // handle error
   if (newUserDoc === null) {
@@ -13,6 +25,6 @@ module.exports = async (req, res) => {
   else {
     console.log("signUp", newUserDoc)
     // const bodyRes = makeResponse(newUserDoc);
-    res.send("Success");
+    res.json({message: "Success", data: newUserDoc});
   }
 };

@@ -23,7 +23,7 @@ const LoginPage = (props) => {
     }
     try {
       const loginResult = await axios.post(
-        `http://localhost:5000/api/users/login`,
+        `http://localhost:5000/api/coaches/login`,
         formInput
       );
       console.log("loginResult.data.user", loginResult.data.user);

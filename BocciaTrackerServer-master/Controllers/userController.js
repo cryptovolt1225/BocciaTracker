@@ -2,18 +2,18 @@ const UserModel = require('../Models/UserModel');
 const CoachModel = require('../Models/CoachModel');
 
 module.exports = {
-  create: async userData => {
-    let newUserDoc;
-    try {
-      newUserDoc = await CoachModel.create(userData);
-      console.log(userData)
-    } catch (err) {
-      console.log('An error ocurred while registering a user --');
-      console.log(err.message);
-      return null;
-    }
-    return newUserDoc;
-  },
+  // create: async userData => {
+  //   let newUserDoc;
+  //   try {
+  //     // newUserDoc = await CoachModel.create(userData);
+  //     console.log(userData)
+  //   } catch (err) {
+  //     console.log('An error ocurred while registering a user --');
+  //     console.log(err.message);
+  //     return null;
+  //   }
+  //   return newUserDoc;
+  // },
   getAll: async () => {
     let usersDoc;
     try {

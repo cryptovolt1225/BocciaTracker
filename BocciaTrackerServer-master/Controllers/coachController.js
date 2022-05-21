@@ -1,5 +1,7 @@
 const CoachModel = require("../Models/CoachModel");
 
+const bcrypt = require("bcryptjs");
+
 exports.coachController = {
   getCoach(req, res) {
     CoachModel.findOne({ _id: req.params.id })
@@ -12,8 +14,17 @@ exports.coachController = {
     console.log("useData", userData)
     let newUserDoc;
     try {
-      newUserDoc = await CoachModel.create(userData);
-      console.log(userData)
+      
+      const salt = bcrypt.genSaltSync(10);
+      const hash = bcrypt.hashSync(userData.password,salt)
+
+      const newUser = ({
+        full_name: userData.full_name,
+        email: userData.email,
+        password: hash,
+      })
+
+      newUserDoc = await CoachModel.create(newUser);
     } catch (err) {
       console.log('An error ocurred while registering a user --');
       console.log(err.message);

@@ -4,16 +4,16 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 const SignUpPage = () => {
   const [formInput, setSignupFormInput] = useState({
-    username: "",
+    full_name: "",
     email: "",
     password: "",
   });
   const navigate = useNavigate();
 
   const signup = async () => {
-    if( formInput.username == "" )
+    if( formInput.full_name == "" )
     {
-      alert("Please input username!");
+      alert("Please input name!");
       return;
     }else if( formInput.email == "" )
     {
@@ -45,7 +45,7 @@ const SignUpPage = () => {
           <form>
             <div className="mb-3">
               <input type="text" className="form-control" placeholder="Name" aria-label="Name" onChange={(e) =>
-                setSignupFormInput({ ...formInput, username: e.target.value })
+                setSignupFormInput({ ...formInput, full_name: e.target.value })
               } />
             </div>
             <div className="mb-3">
