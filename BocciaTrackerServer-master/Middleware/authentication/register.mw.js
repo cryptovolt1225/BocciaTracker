@@ -8,7 +8,7 @@ const bcrypt = require("bcryptjs");
 module.exports = async (req, res) => {
 
   const salt = bcrypt.genSaltSync(10);
-  const hash = bcrypt.hashSync(req.body.password,salt)
+  const hash = bcrypt.hashSync(req.body.password, salt)
 
   const newUser = ({
     full_name: req.body.full_name,
@@ -25,6 +25,6 @@ module.exports = async (req, res) => {
   else {
     console.log("signUp", newUserDoc)
     // const bodyRes = makeResponse(newUserDoc);
-    res.json({message: "Success", data: newUserDoc});
+    res.json({ message: "Success", data: newUserDoc });
   }
 };
